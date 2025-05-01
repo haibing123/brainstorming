@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Brainstorming Scroll&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9f9f9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 100px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.illustration {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.3em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.text {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #444;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.image-placeholder {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #666;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.scroll-fade {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(40px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.6s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.scroll-fade.visible {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Sections will be injected here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const content = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "1. The Invitation",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Can creativity be taught? How do we come up with a really innovative idea? What is the best method for generating ideas? For many, the answer to these problems is brainstorming. But does it work to solve problems or come up with new ideas?"</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "2. The Brainstorm Begins",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Brainstorming is used most frequently to generate as many solutions to a particular problem as possible because quantity is favoured over quality. The basic assumption is that ‘two heads are better than one’ and that together, in groups, innovative solutions can be found."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "3. The Rules",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "There are guidelines: Group size should be about five to seven people. No criticism allowed. Freewheeling is encouraged. Quantity and variety is also favoured. Encourage combinations and improvements. Notes must be taken."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "4. The Doubts Creep In",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "(a) The fear that group members experience of their ideas being negatively evaluated by their peers; that is, evaluation apprehension."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "5. Too Many Voices",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "(b) The difficulty of simultaneously listening to the ideas of others and thinking of one’s own ideas; that is, production blocking."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "6. Why Bother?",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "(c) The tendency of people to put less effort into carrying out a task when they work in group settings; that is, social loafing."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "7. The Joy of It",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Individuals brainstorming in groups often report that they have lots of fun trying to find new ways to improve their jobs."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "8. Cognitive Stimulation",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "People generating ideas in group settings seem to experience a condition of cognitive stimulation, which actually facilitates the generation of a higher quantity and quality of novel ideas."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "9. Groups vs Individuals",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "It was found that the average accuracy of groups of five persons working together was greater than the average accuracy of five individuals working alone. However, it was also found that groups were substantially slower (as much as 40 per cent) than individuals in reaching solutions."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "10. Pooling of Ignorance",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Two heads may be better than one only when neither is a blockhead — the ‘pooling of ignorance’ does not help at all."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "11. The Paperclip Problem",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Other poorly structured tasks include: coming up with a new product name, image or logo; or finding new or original uses for familiar objects like a coat-hanger, paper clip or brick."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "12. Going Blind",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "In one study, people were given 35 minutes to consider the consequences of everybody suddenly going blind... Individuals were far more productive than groups and arrived at their answers much faster."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "13. Misused Magic",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "In other words, brainstorming is used when it is least effective, and rarely when it is most effective."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "14. The Written Fix",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "These techniques are usually referred to as ‘brainwriting’ and aim at limiting the production blocking that occurs in brainstorming groups."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "15. The Digital Upgrade",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Brainstorming is also performed in ‘electronic brainstorming groups’, in which case the interaction among group members is taking place through computers, eliminating any oral communication."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>illustration: "16. The Verdict",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "The paradox of brainstorming is that this technique is most frequently used when research suggests it is least effective. Even though it’s popular and enjoyable, group interaction often inhibits the sharing of novel ideas."</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const container = document.getElementById('container');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>content.forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const section = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>section.classList.add('section', 'scroll-fade');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>section.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="image-placeholder"&gt;[ Illustration Placeholder: ${item.illustration} ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="illustration"&gt;${item.illustration}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text"&gt;${item.text}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>container.appendChild(section);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Intersection Observer for fade-in effect</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const observer = new IntersectionObserver(entries =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>entries.forEach(entry =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (entry.isIntersecting) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>entry.target.classList.add('visible');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, { threshold: 0.1 });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll('.scroll-fade').forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>observer.observe(el);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
